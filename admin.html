@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>매트허브 관리자 센터 | MATHUB ADMIN</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Gothic+A1:wght@300;400;500;700&family=Outfit:wght@400;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="admin.css">
+
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <!-- Chart.js for Demo -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body class="admin-body">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+        <div class="sidebar-header">
+            <div class="logo">
+                <span class="logo-text">MATHUB<span>.</span></span>
+                <span class="badge">ADMIN</span>
+            </div>
+        </div>
+        <nav class="sidebar-nav">
+            <ul>
+                <li class="active"><a href="#"><i data-lucide="layout-dashboard"></i> 대시보드</a></li>
+                <li><a href="#"><i data-lucide="package"></i> 상품 관리</a></li>
+                <li><a href="#"><i data-lucide="shopping-cart"></i> 주문 리스트</a></li>
+                <li><a href="#"><i data-lucide="users"></i> 회원 관리</a></li>
+                <li><a href="#"><i data-lucide="star"></i> 리뷰 관리</a></li>
+                <li><a href="#"><i data-lucide="settings"></i> 사이트 설정</a></li>
+            </ul>
+        </nav>
+        <div class="sidebar-footer">
+            <div class="admin-profile">
+                <div class="avatar">AD</div>
+                <div class="info">
+                    <span class="name">관리자님</span>
+                    <span class="role">Chief Editor</span>
+                </div>
+            </div>
+            <button class="btn-logout"><i data-lucide="log-out"></i></button>
+        </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="admin-main">
+        <!-- Top Bar -->
+        <header class="admin-header">
+            <div class="header-search">
+                <i data-lucide="search"></i>
+                <input type="text" placeholder="주문번호, 상품명 검색...">
+            </div>
+            <div class="header-actions">
+                <div class="notification-bell">
+                    <i data-lucide="bell"></i>
+                    <span class="dot"></span>
+                </div>
+                <a href="index.html" class="btn-goto-site" target="_blank">사이트 바로가기 <i
+                        data-lucide="external-link"></i></a>
+            </div>
+        </header>
+
+        <!-- Dashboard Content -->
+        <div class="admin-content">
+            <div class="content-header">
+                <h1>대시보드</h1>
+                <div class="date-picker">2024년 03월 21일 (목)</div>
+            </div>
+
+            <!-- Stats Grid -->
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-info">
+                        <span class="label">금일 매출</span>
+                        <h2 class="value">₩1,240,000</h2>
+                        <span class="trend up"><i data-lucide="trending-up"></i> +12%</span>
+                    </div>
+                    <div class="stat-icon pink"><i data-lucide="krw"></i></div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-info">
+                        <span class="label">신규 주문</span>
+                        <h2 class="value">42건</h2>
+                        <span class="trend up"><i data-lucide="trending-up"></i> +5%</span>
+                    </div>
+                    <div class="stat-icon blue"><i data-lucide="shopping-bag"></i></div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-info">
+                        <span class="label">방문자 수</span>
+                        <h2 class="value">1,402명</h2>
+                        <span class="trend down"><i data-lucide="trending-down"></i> -2%</span>
+                    </div>
+                    <div class="stat-icon green"><i data-lucide="eye"></i></div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-info">
+                        <span class="label">전체 평점</span>
+                        <h2 class="value">4.9 / 5.0</h2>
+                        <span class="trend up"><i data-lucide="check"></i> 안정적</span>
+                    </div>
+                    <div class="stat-icon yellow"><i data-lucide="smile"></i></div>
+                </div>
+            </div>
+
+            <!-- Charts & Tables Row -->
+            <div class="dashboard-row">
+                <div class="chart-container">
+                    <div class="card-header">
+                        <h3>주간 매출 추이</h3>
+                        <div class="actions"><button class="btn-sm">상세보기</button></div>
+                    </div>
+                    <canvas id="salesChart"></canvas>
+                </div>
+                <div class="recent-orders">
+                    <div class="card-header">
+                        <h3>최근 주문 현황</h3>
+                        <a href="#" class="view-all">전체보기</a>
+                    </div>
+                    <div class="table-wrapper">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>주문번호</th>
+                                    <th>상품명</th>
+                                    <th>금액</th>
+                                    <th>상태</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>#ORD-8219</td>
+                                    <td>TPU 퍼즐매트 (크림) 외 2건</td>
+                                    <td>₩152,000</td>
+                                    <td><span class="status-badge paid">결제완료</span></td>
+                                </tr>
+                                <tr>
+                                    <td>#ORD-8218</td>
+                                    <td>프리미엄 롤매트 14mm</td>
+                                    <td>₩48,000</td>
+                                    <td><span class="status-badge shipping">배송중</span></td>
+                                </tr>
+                                <tr>
+                                    <td>#ORD-8217</td>
+                                    <td>4단 접이식 폴더매트</td>
+                                    <td>₩89,000</td>
+                                    <td><span class="status-badge delivered">배송완료</span></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product Management Section -->
+            <div class="management-section">
+                <div class="section-header-admin">
+                    <h3>상품 리쇼어 가공 (재고 관리)</h3>
+                    <button class="btn-add-product" id="openModalBtn"><i data-lucide="plus"></i> 새 상품 등록</button>
+                </div>
+                <div class="product-table-card">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>이미지</th>
+                                <th>리퍼브 등급</th>
+                                <th>상품명</th>
+                                <th>잔여 재고</th>
+                                <th>할인가</th>
+                                <th>상태</th>
+                                <th>작업</th>
+                            </tr>
+                        </thead>
+                        <tbody id="adminProductList">
+                            <tr>
+                                <td>
+                                    <div class="table-img"><img
+                                            src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&q=80&w=50"
+                                            alt=""></div>
+                                </td>
+                                <td><span class="badge-s">S-Grade</span></td>
+                                <td>TPU 퍼즐매트 (크림)</td>
+                                <td>3개</td>
+                                <td>₩24,500</td>
+                                <td><span class="toggle active">판매중</span></td>
+                                <td>
+                                    <button class="btn-icon"><i data-lucide="edit-2"></i></button>
+                                    <button class="btn-icon delete"><i data-lucide="trash-2"></i></button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="table-img"><img
+                                            src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&q=80&w=50"
+                                            alt=""></div>
+                                </td>
+                                <td><span class="badge-a">A-Grade</span></td>
+                                <td>맞춤형 와이드 롤매트 14mm</td>
+                                <td>12개</td>
+                                <td>₩48,000</td>
+                                <td><span class="toggle active">판매중</span></td>
+                                <td>
+                                    <button class="btn-icon"><i data-lucide="edit-2"></i></button>
+                                    <button class="btn-icon delete"><i data-lucide="trash-2"></i></button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Add Product Modal -->
+    <div id="productModal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h2>새 리퍼브 상품 등록</h2>
+            <form id="addProductForm">
+                <div class="form-group">
+                    <label>상품 카테고리</label>
+                    <select id="prodCategory">
+                        <option>롤매트</option>
+                        <option>TPU 퍼즐매트</option>
+                        <option>폴더매트</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>리퍼브 등급</label>
+                    <select id="prodGrade">
+                        <option value="S">S-Grade (미개봉)</option>
+                        <option value="A">A-Grade (전시품)</option>
+                        <option value="B">B-Grade (균일가)</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>상품명</label>
+                    <input type="text" id="prodName" placeholder="상품명을 입력하세요">
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>판매가</label>
+                        <input type="number" id="prodPrice" placeholder="₩">
+                    </div>
+                    <div class="form-group">
+                        <label>재고 수량</label>
+                        <input type="number" id="prodStock" placeholder="개">
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-primary btn-block">상품 등록하기</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- JS -->
+    <script src="admin.js"></script>
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+
+</html>
