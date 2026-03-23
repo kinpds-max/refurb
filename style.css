@@ -72,3 +72,25 @@ footer { border-top: 1px solid var(--gray-200); padding: 40px 0; color: var(--te
     #hero h1 { font-size: 1.5rem; }
     .product-grid { grid-template-columns: repeat(2, 1fr); gap: 24px 12px; }
 }
+
+.btn-more {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 14px 40px;
+    border: 1px solid var(--gray-200);
+    border-radius: 8px;
+    background-color: var(--white);
+    color: var(--text-main);
+    font-weight: 700;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: var(--transition);
+    margin: 0 auto;
+}
+
+.btn-more:hover {
+    background-color: var(--gray-100);
+}
+
