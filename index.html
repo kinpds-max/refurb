@@ -1,408 +1,162 @@
 <!DOCTYPE html>
 <html lang="ko">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>매트허브 리퍼브전문마켓 | 국내최초 모든매트 리퍼브 통합 플랫폼</title>
-    <meta name="description" content="매트허브 리퍼브전문마켓 - 국내최초 모든 매트의 리퍼제품을 한곳에! 합리적인 AI 매칭 견적 서비스로 프리미엄 매트를 가장 정직한 가격으로 만나보세요.">
-
-
+    <meta name="description" content="매트허브 리퍼브전문마켓 - 국내최초 모든 매트의 리퍼제품을 한곳에! 합리적인 AI 매칭 견적 서비스.">
+    
     <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Gothic+A1:wght@300;400;500;700&family=Outfit:wght@400;600;700&display=swap"
-        rel="stylesheet">
-
+    <link href="https://fonts.googleapis.com/css2?family=Gothic+A1:wght@300;400;500;700&family=Outfit:wght@400;600;700&display=swap" rel="stylesheet">
+    
     <!-- CSS -->
     <link rel="stylesheet" href="style.css">
-
+    
     <!-- Lucide Icons -->
     <script src="https://unpkg.com/lucide@latest"></script>
 </head>
-
 <body>
-    <!-- Navigation -->
-    <nav id="main-nav">
+    <!-- Navbar -->
+    <nav>
         <div class="container nav-container">
             <div class="logo">
-                <span class="logo-text">MATHUB<span>.</span></span>
-                <span class="badge">REFURB</span>
+                <a href="index.html" class="logo-text">MATHUB<span>.</span></a>
             </div>
-            <ul class="nav-links">
-                <li><a href="#about">브랜드 스토리</a></li>
-                <li><a href="#products">리퍼브 상품</a></li>
-                <li><a href="#guide">가이드</a></li>
-                <li><a href="#reviews">리뷰</a></li>
-            </ul>
+            <div class="nav-search">
+                <div class="search-input-wrapper">
+                    <i data-lucide="search"></i>
+                    <input type="text" placeholder="매트 브랜드나 종류를 입력해 보세요">
+                </div>
+            </div>
             <div class="nav-actions">
-                <button class="search-btn"><i data-lucide="search"></i></button>
-                <button class="cart-btn"><i data-lucide="shopping-bag"></i></button>
-                <a href="https://pf.kakao.com/" target="_blank" class="kakao-link">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/e/e3/KakaoTalk_logo.svg" alt="KakaoTalk">
-                    <span>문의하기</span>
-                </a>
+                <a href="#products">모든리퍼</a>
+                <a href="#about">이용가이드</a>
+                <a href="admin.html" style="color: #666;"><i data-lucide="settings"></i></a>
             </div>
-            <button class="mobile-menu-btn"><i data-lucide="menu"></i></button>
         </div>
     </nav>
 
-    <!-- Hero Section -->
+    <!-- Hero Banner (Minimalized Daangn style) -->
     <section id="hero">
-        <div class="container hero-container">
-            <div class="hero-content">
-                <div class="top-tag animate-up">국내 최초 모든 매트의 리퍼브 전문 통합 플랫폼</div>
-                <h1 class="animate-up">합리적인<br><span>AI 매칭 견적</span> 안내</h1>
-                <p class="hero-desc animate-up">매트허브는 전문가의 꼼꼼한 검수와 살균을 거친 국내 모든 브랜드의 리퍼 매트를 한곳에 모았습니다. 우리집에 딱 맞는 매트, 이제 AI가 합리적으로 매칭해 드립니다.</p>
-
-                <div class="hero-actions animate-up">
-                    <a href="#products" class="btn btn-primary">지금 쇼핑하기 <i data-lucide="arrow-right"></i></a>
-                    <a href="#guide" class="btn btn-outline">등급 가이드 보기</a>
-                </div>
-                <div class="hero-stats animate-up">
-                    <div class="stat">
-                        <span class="stat-num">40%+</span>
-                        <span class="stat-label">평균 할인율</span>
-                    </div>
-                    <div class="stat">
-                        <span class="stat-num">S-Grade</span>
-                        <span class="stat-label">엄격한 검수</span>
-                    </div>
-                    <div class="stat">
-                        <span class="stat-num">10k+</span>
-                        <span class="stat-label">누적 고객</span>
-                    </div>
-                </div>
-            </div>
-            <div class="hero-visual animate-fade-in">
-                <div class="hero-image-wrapper">
-                    <img src="mathub_hero_banner.png" alt="Happy family on MatHub" id="hero-img">
-                    <div class="floating-badge">
-                        <i data-lucide="check-circle"></i>
-                        <span>살균 세척 완료</span>
-                    </div>
-                </div>
-            </div>
+        <div class="container hero-content">
+            <h1 class="animate-up">국내 모든 리퍼매트를<br><span>보장된 한곳</span>에서 만나보세요!</h1>
+            <p class="animate-up">합리적인 <b>AI 매칭 견적</b>으로 우리집에 딱 맞는 매트를 찾아드립니다.</p>
         </div>
     </section>
 
-    <!-- Trust Banners -->
-    <section id="trust">
-        <div class="container">
-            <div class="trust-grid">
-                <div class="trust-item">
-                    <i data-lucide="shield-check"></i>
-                    <h3>정밀 검수 시스템</h3>
-                    <p>표면 오염부터 내장재 탄성까지 15단계 품질 검수 완료</p>
-                </div>
-                <div class="trust-item">
-                    <i data-lucide="sparkles"></i>
-                    <h3>전문 살균 세척</h3>
-                    <p>친환경 세정제와 자외선 살균으로 신축 상태의 위생 보장</p>
-                </div>
-                <div class="trust-item">
-                    <i data-lucide="truck"></i>
-                    <h3>당일 총알 배송</h3>
-                    <p>오후 2시 이전 결제 완료 시 당일 출고 원칙</p>
-                </div>
-                <div class="trust-item">
-                    <i data-lucide="rotate-ccw"></i>
-                    <h3>책임 보증제</h3>
-                    <p>리퍼브 제품도 동일하게 품질 보증 및 AS 제공</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Grade Guide Section -->
-    <section id="guide">
-        <div class="container">
-            <div class="section-header">
-                <h2>매트허브 리퍼브 <span>등급 가이드</span></h2>
-                <p>투명한 공개로 안심하고 선택하세요</p>
-            </div>
-            <div class="grade-grid">
-                <div class="grade-card s-grade">
-                    <div class="grade-badge">S</div>
-                    <h3>미개봉/단순변심</h3>
-                    <p>박스 훼손만 있거나 개봉 후 단순 변심으로 반품된 새 제품급</p>
-                    <ul class="grade-features">
-                        <li>실사용 흔적 없음</li>
-                        <li>부속품 100% 포함</li>
-                        <li>신규 제품 대비 20-30% 할인</li>
-                    </ul>
-                </div>
-                <div class="grade-card a-grade highlight">
-                    <div class="grade-badge">A</div>
-                    <h3>전시/미세스크래치</h3>
-                    <p>매장 전시 제품 혹은 아주 미세한 표면 자국이 있는 우수한 상태</p>
-                    <ul class="grade-features">
-                        <li>육안으로 식별 어려운 수준</li>
-                        <li>철저한 살균 세척 완료</li>
-                        <li>신규 제품 대비 40-50% 할인</li>
-                    </ul>
-                </div>
-                <div class="grade-card b-grade">
-                    <div class="grade-badge">B</div>
-                    <h3>실 가성비 제품</h3>
-                    <p>기능상 문제는 없으나 외관상 눈에 띄는 흠집이 포함된 최강 가성비</p>
-                    <ul class="grade-features">
-                        <li>뒷면 혹은 측면 흠집 위주</li>
-                        <li>기능/층간소음 성능 동일</li>
-                        <li>신규 제품 대비 60% 이상 할인</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Products Section -->
+    <!-- Product Grid Section -->
     <section id="products">
         <div class="container">
-            <div class="section-header">
-                <div class="header-left">
-                    <h2>오늘의 <span>특가 리퍼브</span></h2>
-                    <p>품절 시 재입고가 어려우니 서두르세요!</p>
-                </div>
-                <div class="header-right">
-                    <div class="tabs">
-                        <button class="active">전체</button>
-                        <button>롤매트</button>
-                        <button>TPU 퍼즐매트</button>
-                        <button>폴더매트</button>
-                    </div>
-                </div>
-            </div>
-
+            <h2 class="section-title">오늘의 신규 리퍼 소식</h2>
+            
             <div class="product-grid">
                 <!-- Product 1 -->
-                <div class="product-card">
+                <div class="product-card animate-up">
                     <div class="product-image">
-                        <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&q=80&w=300"
-                            alt="TPU 퍼즐매트">
-                        <span class="condition-badge s-grade">S-Grade</span>
-                        <div class="product-overlay">
-                            <button class="add-cart">담기</button>
-                            <button class="quick-view">상세보기</button>
-                        </div>
+                        <img src="https://images.unsplash.com/photo-1620641788421-7a1c342ea42e?auto=format&fit=crop&q=80&w=400" alt="TPU 매트">
+                        <span class="grade-tag">S-Grade</span>
                     </div>
                     <div class="product-info">
-                        <span class="category">TPU 퍼즐매트</span>
-                        <h3>프리미엄 TPU 층간소음 퍼즐매트 (크림)</h3>
-                        <div class="price">
+                        <h3>프리미엄 TPU 층간소음 퍼즐매트 (크림) - 개봉 새제품급</h3>
+                        <p class="meta">청라동 · 2시간 전</p>
+                        <div class="price-row">
                             <span class="discount">35%</span>
-                            <span class="current-price">₩24,500</span>
-                            <span class="original-price">₩38,000</span>
+                            <span class="price">24,500원</span>
                         </div>
-                        <div class="stock-bar">
-                            <div class="fill" style="width: 20%;"></div>
-                            <span>잔여 3개</span>
-                        </div>
+                        <div class="product-stats">관심 8 · 채팅 12</div>
                     </div>
                 </div>
 
                 <!-- Product 2 -->
-                <div class="product-card">
+                <div class="product-card animate-up">
                     <div class="product-image">
-                        <img src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&q=80&w=300"
-                            alt="롤매트">
-                        <span class="condition-badge a-grade">A-Grade</span>
-                        <div class="product-overlay">
-                            <button class="add-cart">담기</button>
-                            <button class="quick-view">상세보기</button>
-                        </div>
+                        <img src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&q=80&w=400" alt="롤매트">
+                        <span class="grade-tag">A-Grade</span>
                     </div>
                     <div class="product-info">
-                        <span class="category">롤매트</span>
-                        <h3>맞춤형 와이드 롤매트 14mm (대리석 패턴)</h3>
-                        <div class="price">
+                        <h3>다용도 롤매트 14mm - 전시품 특가상품 (베이지)</h3>
+                        <p class="meta">송도동 · 4시간 전</p>
+                        <div class="price-row">
                             <span class="discount">52%</span>
-                            <span class="current-price">₩48,000</span>
-                            <span class="original-price">₩100,000</span>
+                            <span class="price">48,000원</span>
                         </div>
-                        <div class="stock-bar">
-                            <div class="fill" style="width: 80%;"></div>
-                            <span>잔여 12개</span>
-                        </div>
+                        <div class="product-stats">관심 15 · 채팅 3</div>
                     </div>
                 </div>
 
                 <!-- Product 3 -->
-                <div class="product-card">
+                <div class="product-card animate-up">
                     <div class="product-image">
-                        <img src="https://images.unsplash.com/photo-1603511019672-875f5d34237d?auto=format&fit=crop&q=80&w=300"
-                            alt="폴더매트">
-                        <span class="condition-badge a-grade">A-Grade</span>
-                        <div class="product-overlay">
-                            <button class="add-cart">담기</button>
-                            <button class="quick-view">상세보기</button>
-                        </div>
+                        <img src="https://images.unsplash.com/photo-1603511019672-875f5d34237d?auto=format&fit=crop&q=80&w=400" alt="폴더매트">
+                        <span class="grade-tag">A-Grade</span>
                     </div>
                     <div class="product-info">
-                        <span class="category">폴더매트</span>
-                        <h3>4단 접이식 프리미엄 폴더매트 240x140</h3>
-                        <div class="price">
+                        <h3>접이식 폴더매트 240x140 - 생활 스크래치 할인</h3>
+                        <p class="meta">분당구 · 1일 전</p>
+                        <div class="price-row">
                             <span class="discount">45%</span>
-                            <span class="current-price">₩89,000</span>
-                            <span class="original-price">₩162,000</span>
+                            <span class="price">89,000원</span>
                         </div>
-                        <div class="stock-bar">
-                            <div class="fill" style="width: 10%;"></div>
-                            <span>잔여 1개 (품절임박)</span>
-                        </div>
+                        <div class="product-stats">관심 42 · 채팅 1</div>
                     </div>
                 </div>
 
                 <!-- Product 4 -->
-                <div class="product-card">
+                <div class="product-card animate-up">
                     <div class="product-image">
-                        <img src="https://images.unsplash.com/photo-1585412727339-54e4bae3bbf9?auto=format&fit=crop&q=80&w=300"
-                            alt="주방매트">
-                        <span class="condition-badge b-grade">B-Grade</span>
-                        <div class="product-overlay">
-                            <button class="add-cart">담기</button>
-                            <button class="quick-view">상세보기</button>
-                        </div>
+                        <img src="https://images.unsplash.com/photo-1518131394553-cc53767de899?auto=format&fit=crop&q=80&w=400" alt="거실매트">
+                        <span class="grade-tag">B-Grade</span>
                     </div>
                     <div class="product-info">
-                        <span class="category">주방/러그</span>
-                        <h3>실리콘 리빙 주방매트 (그레이)</h3>
-                        <div class="price">
+                        <h3>대형 거실 소음방지 매트 - 균일가 대방출 (리퍼 한정수량)</h3>
+                        <p class="meta">마포구 · 30분 전</p>
+                        <div class="price-row">
                             <span class="discount">68%</span>
-                            <span class="current-price">₩12,000</span>
-                            <span class="original-price">₩38,000</span>
+                            <span class="price">12,000원</span>
                         </div>
-                        <div class="stock-bar">
-                            <div class="fill" style="width: 50%;"></div>
-                            <span>잔여 8개</span>
-                        </div>
+                        <div class="product-stats">관심 2 · 채팅 4</div>
                     </div>
                 </div>
-            </div>
 
-            <div class="view-more">
-                <button class="btn btn-outline">전체 상품 더보기</button>
-            </div>
-        </div>
-    </section>
-
-    <!-- Review Section -->
-    <section id="reviews">
-        <div class="container">
-            <div class="section-header">
-                <h2>실제 구매 고객님들의 <span>생생한 후기</span></h2>
-                <div class="review-stats">
-                    <span class="score">4.9 / 5.0</span>
-                    <div class="stars">★★★★★</div>
-                    <span class="count">(2,841개의 리뷰)</span>
-                </div>
-            </div>
-            <div class="review-grid">
-                <div class="review-card">
-                    <div class="review-user">
-                        <div class="avatar">김*희</div>
-                        <div class="user-info">
-                            <span class="name">김*희 님</span>
-                            <span class="product-tag">TPU 퍼즐매트 구입</span>
+                <!-- Product 5 (Extra for feed feel) -->
+                <div class="product-card animate-up">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1600585154526-990dced4db0d?auto=format&fit=crop&q=80&w=400" alt="TPU 매트">
+                        <span class="grade-tag">S-Grade</span>
+                    </div>
+                    <div class="product-info">
+                        <h3>국내산 TPU 매트 신규 입고 모델 (박스훼손품)</h3>
+                        <p class="meta">서초구 · 1시간 전</p>
+                        <div class="price-row">
+                            <span class="discount">20%</span>
+                            <span class="price">32,100원</span>
                         </div>
-                    </div>
-                    <p class="review-content">"S급이라더니 정말 새 제품 같아서 깜짝 놀랐어요! 박스 포장만 살짝 찌그러진 정도고 내용물은 완벽합니다. 덕분에 반값에
-                        득템했네요."</p>
-                    <div class="review-footer">
-                        <span class="date">2024.03.15</span>
-                        <span class="verified"><i data-lucide="check-circle"></i> 구매확정</span>
-                    </div>
-                </div>
-                <div class="review-card">
-                    <div class="review-user">
-                        <div class="avatar">이*준</div>
-                        <div class="user-info">
-                            <span class="name">이*준 님</span>
-                            <span class="product-tag">롤매트 구입</span>
-                        </div>
-                    </div>
-                    <p class="review-content">"A급 롤매트 시공했어요. 미세 스크래치 있다고 하셨는데, 바닥에 깔고 나니까 전혀 안 보이네요. 층간소음 고민 해결했습니다!"
-                    </p>
-                    <div class="review-footer">
-                        <span class="date">2024.03.10</span>
-                        <span class="verified"><i data-lucide="check-circle"></i> 구매확정</span>
+                        <div class="product-stats">관심 5 · 채팅 0</div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
-
-    <!-- CTA Section -->
-    <section id="cta">
-        <div class="container">
-            <div class="cta-box">
-                <h2>매일 새로운 상품이 업데이트 됩니다</h2>
-                <p>카카오톡 채널을 추가하고 입고 알림을 받아보세요!</p>
-                <div class="cta-btns">
-                    <a href="#" class="btn btn-kakao">카카오톡 채널 추가 <img
-                            src="https://upload.wikimedia.org/wikipedia/commons/e/e3/KakaoTalk_logo.svg"
-                            alt="Kakao"></a>
-                    <a href="#" class="btn btn-white">회원가입하고 5,000원 받기</a>
-                </div>
+            
+            <div style="text-align: center; margin-top: 60px;">
+                <button style="padding: 12px 30px; border: 1px solid #ddd; border-radius: 4px; background: white; cursor: pointer; font-weight: 700; color: #333;">인기 매트 더 보기</button>
             </div>
         </div>
     </section>
 
     <!-- Footer -->
     <footer>
-        <div class="container footer-grid">
-            <div class="footer-info">
-                <div class="logo">MATHUB<span>.</span></div>
-                <p class="company-desc">매트허브 리퍼브마켓은 지속 가능한 소비와 가치 있는 리빙 환경을 제안합니다.</p>
-                <div class="sns-links">
-                    <a href="#"><i data-lucide="instagram"></i></a>
-                    <a href="#"><i data-lucide="facebook"></i></a>
-                    <a href="#"><i data-lucide="youtube"></i></a>
-                </div>
-            </div>
+        <div class="container">
             <div class="footer-links">
-                <h4>쇼핑하기</h4>
-                <ul>
-                    <li><a href="#">전체 상품</a></li>
-                    <li><a href="#">롤매트</a></li>
-                    <li><a href="#">TPU 퍼즐매트</a></li>
-                    <li><a href="#">특가 이벤트</a></li>
-                </ul>
-            </div>
-            <div class="footer-links">
-                <h4>고객센터</h4>
-                <ul>
-                    <li><a href="#">FAQ</a></li>
-                    <li><a href="#">1:1 문의</a></li>
-                    <li><a href="#">배송/반품 안내</a></li>
-                    <li><a href="#">등급 가이드</a></li>
-                </ul>
-            </div>
-            <div class="footer-contact">
-                <h4>CS CENTER</h4>
-                <p class="phone">1588-XXXX</p>
-                <p class="time">10:00 - 18:00 (Lunch 12-13)<br>주말/공휴일 휴무</p>
-                <button class="btn-help">자주 묻는 질문 보러가기</button>
-            </div>
-        </div>
-        <div class="container footer-bottom">
-            <p>&copy; 2024 MATHUB Refurb Market. All Rights Reserved.</p>
-            <div class="bottom-links">
-                <a href="admin.html" class="admin-link-small"><i data-lucide="lock"></i> 관리자 전용</a>
                 <a href="#">이용약관</a>
                 <a href="#">개인정보처리방침</a>
+                <a href="#">제휴문의</a>
             </div>
+            <p>매트허브 리퍼브마켓 | 사업자 등록번호: 000-00-00000 | 고객센터: 1588-XXXX</p>
+            <p>© 2024 MATHUB. All Rights Reserved.</p>
         </div>
-
     </footer>
 
-    <!-- Main JS -->
+    <!-- JS -->
     <script src="main.js"></script>
-    <script>
-        // Initialize Lucide icons
-        lucide.createIcons();
-    </script>
+    <script>lucide.createIcons();</script>
 </body>
-
 </html>
